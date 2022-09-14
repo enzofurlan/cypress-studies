@@ -165,13 +165,13 @@
             /* 2 */
             /***/ function(module, exports, __webpack_require__) {
                 var __WEBPACK_AMD_DEFINE_ARRAY__,
-                    __WEBPACK_AMD_DEFINE_RESULT__; /*!
+                    __WEBPACK_AMD_DEFINE_RESULT__ /*!
   Copyright (c) 2017 Jed Watson.
   Licensed under the MIT License (MIT), see
   http://jedwatson.github.io/classnames
-*/
+*/;
 
-                /* global define */
+                    /* global define */
                 (function() {
                     'use strict';
 
@@ -4000,7 +4000,8 @@
             /* 38 */
             /***/ function(module, __webpack_exports__, __webpack_require__) {
                 'use strict';
-                /* WEBPACK VAR INJECTION */ (function(global) {
+                /* WEBPACK VAR INJECTION */
+                (function(global) {
                     /**!
                      * @fileOverview Kickass library to create and place poppers near their reference elements.
                      * @version 1.15.0
@@ -9175,7 +9176,6 @@
 
                                 if (_this.props.onExited) {
                                     var _this$props;
-
                                     (_this$props = _this.props).onExited.apply(
                                         _this$props,
                                         arguments,
@@ -9770,7 +9770,6 @@
 
                                 if (_this.props.onExited) {
                                     var _this$props;
-
                                     (_this$props = _this.props).onExited.apply(
                                         _this$props,
                                         arguments,
@@ -11333,7 +11332,8 @@
             /* 74 */
             /***/ function(module, exports, __webpack_require__) {
                 'use strict';
-                /* WEBPACK VAR INJECTION */ (function(global) {
+                /* WEBPACK VAR INJECTION */
+                (function(global) {
                     // @flow
 
                     var key = '__global_unique_id__';

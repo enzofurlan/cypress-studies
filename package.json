@@ -25,12 +25,13 @@
     "singleQuote": true
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.5.0",
     "cypress": "^10.7.0",
     "jest": "^27.2.5",
     "nodemon": "^2.0.13",
-    "prettier": "^1.18.2"
+    "prettier": "1.19.1"
   },
   "description": "",
   "keywords": [],
-  "author": ""
+  "author": "Enzo Furlan"
 }

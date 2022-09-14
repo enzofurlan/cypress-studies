@@ -1,25 +1,54 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('createItem', item_name => {
+    return cy
+        .request({
+            method: 'POST',
+            url: '/items',
+            body: {
+                name: item_name,
+            },
+        })
+        .then(response => {
+            expect(response.status).to.eq(200);
+            expect(response.body).to.have.property('completed', false);
+            expect(response.body).to.have.property('id');
+            expect(response.body).to.have.property('name', item_name);
+            return response;
+        });
+});
+
+Cypress.Commands.add('markItem', (response, completed) => {
+    cy.request({
+        method: 'PUT',
+        url: '/items/' + response.body.id,
+        body: {
+            completed: completed,
+            name: response.body.name,
+        },
+    }).then(response => {
+        expect(response.status).to.eq(200);
+        expect(response.body).to.have.property('completed', completed);
+        expect(response.body).to.have.property('id', response.body.id);
+        expect(response.body).to.have.property('name', response.body.name);
+    });
+});
+
+Cypress.Commands.add('deleteItem', id => {
+    cy.request({
+        method: 'DELETE',
+        url: '/items/' + id,
+    }).then(response => {
+        expect(response.status).to.eq(200);
+    });
+});
+
+Cypress.Commands.add('getItems', () => {
+    return cy
+        .request({
+            method: 'GET',
+            url: '/items',
+        })
+        .then(response => {
+            expect(response.status).to.eq(200);
+            return response;
+        });
+});
