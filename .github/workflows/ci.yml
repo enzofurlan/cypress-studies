@@ -4,9 +4,13 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Check out code
         uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+
+      - name: Run docker-compose
+        run: docker-compose up -d
+
       - name: Cypress run
         uses: cypress-io/github-action@v4.2.0
+        with:
+          wait-on: 'http://localhost:3000'
