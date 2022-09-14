@@ -1,4 +1,5 @@
 # cypress-studies
+[![Cypress API Tests 🧪](https://github.com/enzofurlan/cypress-studies/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/enzofurlan/cypress-studies/actions/workflows/ci.yml)
 
 Simple TODO tasks app with a Cypress project.
 
