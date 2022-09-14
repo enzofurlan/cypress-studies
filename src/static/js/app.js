@@ -47,7 +47,7 @@ function TodoListCard() {
         [items],
     );
 
-    if (items === null) return 'Loading...';
+    if (items === null) return 'Failed to load... try again later.';
 
     return (
         <React.Fragment>

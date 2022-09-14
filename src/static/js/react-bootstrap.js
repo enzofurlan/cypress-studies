@@ -171,7 +171,7 @@
   http://jedwatson.github.io/classnames
 */;
 
-                    /* global define */
+                /* global define */
                 (function() {
                     'use strict';
 
